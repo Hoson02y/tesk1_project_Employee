@@ -1,0 +1,33 @@
+﻿@page
+@model Employee.Pages.EmployeesModel
+@{
+}
+<br/>
+<h2>Employee Table</h2>
+<a class="btn btn-primary btn-sm" href= '/Employee/create'>New employee</a>
+<table class = "tabel" border="1">
+    <thead>
+        <tr>
+            <th>Employee Number</th>
+            <th>Employee Name</th>
+            <th>Address</th>
+            <th>Function</th>
+            <th>Date of Birth</th>
+            <th>Date of Employment</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model.ListEmployee)
+        {
+            <tr>
+                <td>@employee.EmployeeID</td>
+                <td>@employee.EmployeeName</td>
+                <td>@employee.Address</td>
+                <td>@employee.Function</td>
+               <td>@employee.DateOfBirth.ToString("dd/MM/yyyy")</td>
+                 <td>@employee.DateOfEmployment.ToString("dd/MM/yyyy")</td> 
+            </tr>
+        }
+    </tbody>
+</table>
+  
